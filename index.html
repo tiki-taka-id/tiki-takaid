@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TikiTakaID - Live Bola</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1a1a1a, #050505);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 196, 0, 0.12);
+      border-radius: 50%;
+      filter: blur(120px);
+      top: -120px;
+      z-index: 0;
+    }
+
+    .logo {
+      font-size: 70px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ffd000, #ff9100);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: 1;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px rgba(255, 187, 0, 0.4);
+    }
+
+    .subtitle {
+      font-size: 20px;
+      margin-top: 15px;
+      color: #d9d9d9;
+      max-width: 700px;
+      z-index: 1;
+      line-height: 1.7;
+    }
+
+    .live-badge {
+      margin-top: 25px;
+      background: #ff0000;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 18px;
+      animation: pulse 1.5s infinite;
+      z-index: 1;
+      box-shadow: 0 0 20px rgba(255,0,0,0.7);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.08);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .matches {
+      width: 100%;
+      max-width: 1100px;
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      z-index: 1;
+    }
+
+    .match-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 30px 25px;
+      backdrop-filter: blur(12px);
+      transition: 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .match-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: #ffb300;
+      box-shadow: 0 0 30px rgba(255, 174, 0, 0.35);
+    }
+
+    .match-card::before {
+      content: "LIVE";
+      position: absolute;
+      top: 15px;
+      right: -40px;
+      background: red;
+      padding: 6px 45px;
+      transform: rotate(45deg);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .league {
+      color: #ffcc00;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .teams {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .time {
+      margin-top: 15px;
+      color: #cccccc;
+      font-size: 15px;
+    }
+
+    .watch-btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      color: black;
+      background: linear-gradient(90deg, #ffd000, #ff9900);
+      transition: 0.3s ease;
+      box-shadow: 0 0 18px rgba(255, 196, 0, 0.45);
+    }
+
+    .watch-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 35px rgba(255, 196, 0, 0.8);
+    }
+
+    .footer {
+      margin-top: 70px;
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+      z-index: 1;
+    }
+
+    .footer span {
+      color: #ffcc00;
+      font-weight: 700;
+    }
+
+    @media(max-width: 768px){
+      .logo {
+        font-size: 46px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .teams {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1 class="logo">TikiTakaID</h1>
+
+    <p class="subtitle">
+      Streaming bola live paling panas hari ini! Saksikan pertandingan terbaik dunia dengan sensasi stadion yang bikin deg-degan. Nikmati live score, jadwal big match, dan sorotan pertandingan terkeren hanya di TikiTakaID.
+    </p>
+
+    <div class="live-badge">
+      🔴 LIVE MATCH SEDANG BERLANGSUNG
+    </div>
+
+    <div class="matches">
+
+      <div class="match-card">
+        <div class="league">UEFA Champions League</div>
+        <div class="teams">Real Madrid<br>VS<br>Manchester City</div>
+        <div class="time">Kick Off • 02:00 WIB</div>
+        <a href="https://jalaace5.com/#/" class="watch-btn" target="_blank">
+          Tonton Sekarang
+        </a>
+      </div>
+
+      <div class="match-card">
+        <div class="league">Premier League</div>
+        <div class="teams">Liverpool<br>VS<br>Arsenal</div>
+        <div class="time">Kick Off • 23:30 WIB</div>
+        <a href="https://jalaace5.com/#/" class="watch-btn" target="_blank">
+          Streaming Live
+        </a>
+      </div>
+
+      <div class="match-card">
+        <div class="league">Serie A</div>
+        <div class="teams">AC Milan<br>VS<br>Inter Milan</div>
+        <div class="time">Kick Off • 01:45 WIB</div>
+        <a href="https://jalaace5.com/#/" class="watch-btn" target="_blank">
+          Masuk Live Match
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      © 2026 <span>TikiTakaID</span> • Pusat Streaming Bola Live Terbaik
+    </div>
+
+  </section>
+
+</body>
+</html>
