@@ -1,251 +1,1249 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TikiTakaID - Live Bola</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <title>TikiTakaID - Jadwal Piala Dunia 2026 Terlengkap & Live Gratis StreamingTerbaru</title>
+  <meta name="description" content="TikiTakaID menyediakan jadwal piala dunia 2026 terlengkap dengan update harian, live streaming gratis, hasil pertandingan, dan statistik lengkap FIFA World Cup 2026." />
+  <meta name="keywords" content="TikiTakaId, Piala Dunia 2026, Jadwal Piala Dunia, Live streaming bola, Nonton bola gratis, FIFA World Cup 2026, Live score bola, Prediksi piala dunia, Statistik bola lengkap, Streaming bola lancar" />
+  
+  <link rel="canonical" href="https://tikitaka-id.pages.dev/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Tigoals",
+    "url": "https://tikitaka-id.pages.dev/",
+    "description": "TikiTakaId menyediakan jadwal piala dunia 2026 terlengkap dengan update harian, live streaming gratis, hasil pertandingan, dan statistik lengkap FIFA World Cup 2026.",
+    "keywords": "TikiTakaId, Piala Dunia 2026, Jadwal Piala Dunia, Live streaming bola, Nonton bola gratis, FIFA World Cup 2026, Live score bola, Prediksi piala dunia, Statistik bola lengkap, Streaming bola lancar"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+    :root {
+      --pitch-black: #050a06;
+      --deep-green: #071a0a;
+      --grass: #1a4d20;
+      --grass-bright: #22c55e;
+      --neon-yellow: #f5e642;
+      --neon-orange: #ff6b1a;
+      --white: #f0f4f0;
+      --muted: #8a9e8c;
+      --card-bg: #0b180d;
+      --border: #1e3621;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'Montserrat', sans-serif;
     }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      background: radial-gradient(circle at top, #1a1a1a, #050505);
-      color: white;
+      background: var(--pitch-black);
+      color: var(--white);
+      font-family: var(--font-body);
       overflow-x: hidden;
+      cursor: none;
     }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 30px;
-      position: relative;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: rgba(255, 196, 0, 0.12);
+    /* Custom Cursor */
+    .cursor {
+      width: 14px; height: 14px;
+      background: var(--neon-yellow);
       border-radius: 50%;
-      filter: blur(120px);
-      top: -120px;
-      z-index: 0;
+      position: fixed; pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform .1s ease, background .2s;
+      mix-blend-mode: difference;
+    }
+    .cursor-ring {
+      width: 38px; height: 38px;
+      border: 2px solid var(--neon-yellow);
+      border-radius: 50%;
+      position: fixed; pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform .18s ease, width .2s, height .2s;
+      opacity: .5;
     }
 
-    .logo {
-      font-size: 70px;
-      font-weight: 800;
-      background: linear-gradient(90deg, #ffd000, #ff9100);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+      background: linear-gradient(to bottom, rgba(5,10,6,.95), transparent);
+      backdrop-filter: blur(4px);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: 4px;
+      color: var(--neon-yellow);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--grass-bright); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--muted);
+      font-weight: 600; font-size: .78rem;
+      letter-spacing: 2px; text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--neon-yellow); }
+    .nav-cta {
+      background: var(--neon-yellow);
+      color: var(--pitch-black);
+      font-weight: 900; font-size: .78rem;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: .6rem 1.5rem;
+      border: none; cursor: none;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--neon-orange); transform: scale(1.04); }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-video-wrap {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-video-wrap::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(5,10,6,.92) 40%, rgba(7,26,10,.7) 100%);
+    }
+    /* Fake stadium bg via CSS art */
+    .stadium-bg {
+      width: 100%; height: 100%;
+      background:
+        radial-gradient(ellipse at 50% 110%, #1a4d20 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(34,197,94,.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(255,107,26,.08) 0%, transparent 50%),
+        linear-gradient(180deg, #050a06 0%, #071a0a 60%, #0c2410 100%);
+      animation: stadiumPulse 8s ease-in-out infinite alternate;
+    }
+    @keyframes stadiumPulse {
+      0% { filter: brightness(1); }
+      100% { filter: brightness(1.15); }
+    }
+    /* Stadium lights rays */
+    .light-rays {
+      position: absolute; inset: 0; overflow: hidden;
+    }
+    .light-rays::before, .light-rays::after {
+      content: '';
+      position: absolute;
+      width: 3px; height: 80vh;
+      top: -10vh;
+      background: linear-gradient(to bottom, rgba(245,230,66,.25), transparent);
+      transform-origin: top center;
+      animation: swayLight 10s ease-in-out infinite alternate;
+    }
+    .light-rays::before { left: 20%; transform: rotate(25deg); }
+    .light-rays::after  { right: 20%; transform: rotate(-25deg); animation-delay: 3s; }
+    @keyframes swayLight {
+      0%   { opacity: .5; }
+      100% { opacity: .15; }
+    }
+
+    /* Pitch lines overlay */
+    .pitch-lines {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 90vw; max-width: 800px; height: 40vh;
+      border: 1px solid rgba(34,197,94,.12);
+      border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+      pointer-events: none;
+    }
+    .pitch-lines::before {
+      content: ''; position: absolute; inset: 15%;
+      border: 1px solid rgba(34,197,94,.08);
+      border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+    }
+
+    .hero-content {
+      position: relative; z-index: 1;
+      padding: 0 6%;
+      max-width: 900px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(34,197,94,.12);
+      border: 1px solid rgba(34,197,94,.3);
+      padding: .35rem .9rem;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--grass-bright);
+      margin-bottom: 1.5rem;
+      animation: fadeSlideUp .6s ease both;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--grass-bright);
+      border-radius: 50%;
+      animation: blink 1.2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+    @keyframes fadeSlideUp {
+      from { opacity:0; transform: translateY(24px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 7.5rem);
+      line-height: .95;
+      letter-spacing: 2px;
+      animation: fadeSlideUp .7s .15s ease both;
+    }
+    .hero-headline .accent { color: var(--neon-yellow); }
+    .hero-headline .accent2 { color: var(--grass-bright); }
+
+    .hero-sub {
+      margin-top: 1.5rem;
+      font-size: clamp(.9rem, 2vw, 1.1rem);
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 540px;
+      animation: fadeSlideUp .7s .3s ease both;
+    }
+
+    .hero-actions {
+      margin-top: 2.5rem;
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeSlideUp .7s .45s ease both;
+    }
+    .btn-primary {
+      background: var(--neon-yellow);
+      color: var(--pitch-black);
+      font-family: var(--font-body);
+      font-weight: 900; font-size: .88rem;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      border: none; cursor: none;
+      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+    .btn-primary:hover {
+      background: var(--neon-orange);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(255,107,26,.35);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 700; font-size: .88rem;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      border: 1px solid var(--border);
+      cursor: none;
+      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+      transition: border-color .2s, color .2s;
+    }
+    .btn-ghost:hover { border-color: var(--grass-bright); color: var(--grass-bright); }
+
+    .hero-stats {
+      margin-top: 3.5rem;
+      display: flex; gap: 3rem;
+      animation: fadeSlideUp .7s .6s ease both;
+    }
+    .stat-item { display: flex; flex-direction: column; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      color: var(--neon-yellow);
+      letter-spacing: 2px;
+    }
+    .stat-label { font-size: .72rem; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+
+    /* Floating ball */
+    .floating-ball {
+      position: absolute; right: 8%; top: 50%; transform: translateY(-50%);
+      width: clamp(180px, 22vw, 320px);
       z-index: 1;
-      letter-spacing: 3px;
-      text-shadow: 0 0 20px rgba(255, 187, 0, 0.4);
+      animation: floatBall 6s ease-in-out infinite;
+      opacity: .9;
+    }
+    @keyframes floatBall {
+      0%,100% { transform: translateY(-50%) rotate(0deg); }
+      50%     { transform: translateY(calc(-50% - 20px)) rotate(15deg); }
+    }
+    .ball-svg circle { fill: none; stroke: rgba(34,197,94,.6); }
+    .ball-svg path  { fill: rgba(34,197,94,.08); stroke: rgba(245,230,66,.4); stroke-width: .5; }
+
+    /* ── LIVE MATCHES ── */
+    #live {
+      padding: 5rem 5%;
+      position: relative;
+      background: linear-gradient(to bottom, var(--pitch-black), var(--deep-green));
+    }
+    .section-label {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--grass-bright);
+      margin-bottom: .75rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 4rem);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+    .section-title .accent { color: var(--neon-yellow); }
+
+    .live-indicator {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(239,68,68,.15); border: 1px solid rgba(239,68,68,.4);
+      color: #ef4444; font-size: .7rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: .3rem .8rem;
+      margin-bottom: 2rem;
+    }
+    .live-indicator::before {
+      content: '';
+      width: 6px; height: 6px; background: #ef4444; border-radius: 50%;
+      animation: blink 1s ease-in-out infinite;
     }
 
-    .subtitle {
-      font-size: 20px;
-      margin-top: 15px;
-      color: #d9d9d9;
-      max-width: 700px;
-      z-index: 1;
-      line-height: 1.7;
+    .match-scroller {
+      display: flex; gap: 1.2rem;
+      overflow-x: auto; padding-bottom: 1rem;
+      scrollbar-width: none;
     }
-
-    .live-badge {
-      margin-top: 25px;
-      background: #ff0000;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 18px;
-      animation: pulse 1.5s infinite;
-      z-index: 1;
-      box-shadow: 0 0 20px rgba(255,0,0,0.7);
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: scale(1.08);
-        opacity: 0.8;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    .matches {
-      width: 100%;
-      max-width: 1100px;
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      z-index: 1;
-    }
+    .match-scroller::-webkit-scrollbar { display: none; }
 
     .match-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 30px 25px;
-      backdrop-filter: blur(12px);
-      transition: 0.35s ease;
+      flex: 0 0 260px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.4rem 1.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .2s, transform .2s;
+      cursor: pointer;
+    }
+    .match-card:hover { border-color: var(--grass-bright); transform: translateY(-4px); }
+    .match-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--grass-bright);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .3s;
+    }
+    .match-card:hover::before { transform: scaleX(1); }
+    .match-card.live-card::before { transform: scaleX(1); background: #ef4444; }
+
+    .match-league {
+      font-size: .65rem; color: var(--muted);
+      letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .match-teams { display: flex; flex-direction: column; gap: .6rem; }
+    .match-team {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .team-name { font-weight: 700; font-size: .9rem; }
+    .team-score {
+      font-family: var(--font-display);
+      font-size: 1.6rem; color: var(--neon-yellow);
+      letter-spacing: 2px;
+    }
+    .match-divider {
+      height: 1px; background: var(--border);
+      margin: .8rem 0; position: relative;
+    }
+    .match-divider span {
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--card-bg);
+      padding: 0 .5rem;
+      font-size: .65rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .match-time {
+      margin-top: .8rem;
+      font-size: .7rem; color: #ef4444; font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .match-upcoming .match-time { color: var(--muted); }
+
+    /* ── FEATURES ── */
+    #features {
+      padding: 6rem 5%;
+      background: var(--deep-green);
+    }
+    .features-grid {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 2.2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform .2s, border-color .2s;
+    }
+    .feature-card:hover { transform: translateY(-6px); border-color: var(--neon-yellow); }
+    .feature-icon {
+      font-size: 2.4rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+    .feature-num {
+      position: absolute; right: 1.5rem; top: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 5rem; color: rgba(34,197,94,.06);
+      letter-spacing: 2px; line-height: 1;
+    }
+    .feature-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem; letter-spacing: 2px;
+      margin-bottom: .8rem;
+      color: var(--white);
+    }
+    .feature-title .hl { color: var(--neon-yellow); }
+    .feature-desc {
+      font-size: .85rem; color: var(--muted);
+      line-height: 1.8;
+    }
+    .feature-tag {
+      display: inline-block;
+      margin-top: 1.2rem;
+      background: rgba(245,230,66,.1);
+      color: var(--neon-yellow);
+      font-size: .65rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: .3rem .8rem;
+    }
+
+    /* ── COPYWRITING STRIP ── */
+    .marquee-section {
+      padding: 2rem 0;
+      background: var(--neon-yellow);
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .marquee-track {
+      display: inline-flex; gap: 3rem;
+      animation: marquee 22s linear infinite;
+    }
+    .marquee-track span {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 3px;
+      color: var(--pitch-black);
+      text-transform: uppercase;
+    }
+    .marquee-track .dot { color: var(--grass); opacity: .4; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── COMMUNITY FEED ── */
+    #community {
+      padding: 6rem 5%;
+      background: linear-gradient(to bottom, var(--deep-green), var(--pitch-black));
+    }
+    .feed-grid {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.2rem;
+    }
+    .feed-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.6rem;
+      transition: border-color .2s;
+      position: relative;
+    }
+    .feed-card:hover { border-color: rgba(34,197,94,.4); }
+    .feed-header {
+      display: flex; align-items: center; gap: .9rem;
+      margin-bottom: 1rem;
+    }
+    .feed-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: .85rem;
+      flex-shrink: 0;
+    }
+    .feed-user { font-weight: 700; font-size: .88rem; }
+    .feed-time { font-size: .7rem; color: var(--muted); }
+    .feed-badge {
+      margin-left: auto;
+      font-size: .6rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: .25rem .6rem;
+      background: rgba(34,197,94,.12);
+      color: var(--grass-bright);
+      border: 1px solid rgba(34,197,94,.2);
+      white-space: nowrap;
+    }
+    .feed-text { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+    .feed-text strong { color: var(--white); }
+    .feed-actions {
+      margin-top: 1.2rem;
+      display: flex; gap: 1.5rem; align-items: center;
+    }
+    .feed-btn {
+      background: none; border: none; cursor: none;
+      color: var(--muted); font-size: .78rem;
+      font-family: var(--font-body); font-weight: 600;
+      display: flex; align-items: center; gap: .4rem;
+      transition: color .2s;
+      padding: 0;
+    }
+    .feed-btn:hover { color: var(--neon-yellow); }
+    .feed-btn.liked { color: var(--neon-orange); }
+
+    /* ── REWARDS SECTION ── */
+    #rewards {
+      padding: 6rem 5%;
+      background: var(--pitch-black);
+      position: relative; overflow: hidden;
+    }
+    #rewards::before {
+      content: '';
+      position: absolute; top: -50%; left: -20%;
+      width: 80vw; height: 80vw; border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,77,32,.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .rewards-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .rewards-text .section-title { margin-bottom: 1.5rem; }
+    .rewards-text p {
+      color: var(--muted); font-size: .92rem; line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+    .points-list { list-style: none; display: flex; flex-direction: column; gap: .9rem; }
+    .points-list li {
+      display: flex; align-items: center; gap: 1rem;
+      font-size: .88rem; color: var(--muted);
+    }
+    .points-list li::before {
+      content: attr(data-pts);
+      font-family: var(--font-display);
+      font-size: 1.1rem; color: var(--neon-yellow);
+      background: rgba(245,230,66,.1);
+      padding: .2rem .6rem;
+      min-width: 60px; text-align: center;
+      flex-shrink: 0;
+    }
+    .rewards-visual {
+      position: relative;
+    }
+    .trophy-card {
+      background: linear-gradient(135deg, #0b180d, #0f2412);
+      border: 1px solid rgba(34,197,94,.25);
+      padding: 2.5rem;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
-
-    .match-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      border-color: #ffb300;
-      box-shadow: 0 0 30px rgba(255, 174, 0, 0.35);
+    .trophy-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(245,230,66,.04), transparent 60%);
+    }
+    .trophy-icon { font-size: 5rem; display: block; margin-bottom: 1rem; }
+    .trophy-title {
+      font-family: var(--font-display);
+      font-size: 2rem; color: var(--neon-yellow);
+      letter-spacing: 3px;
+    }
+    .trophy-sub { font-size: .8rem; color: var(--muted); margin-top: .5rem; }
+    .progress-bar-wrap {
+      margin-top: 1.5rem; background: rgba(255,255,255,.06);
+      height: 6px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 72%;
+      background: linear-gradient(to right, var(--grass-bright), var(--neon-yellow));
+      animation: fillBar 2s 1s ease both;
+      transform-origin: left;
+    }
+    @keyframes fillBar {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    .progress-label {
+      margin-top: .5rem;
+      display: flex; justify-content: space-between;
+      font-size: .7rem; color: var(--muted);
     }
 
-    .match-card::before {
-      content: "LIVE";
-      position: absolute;
-      top: 15px;
-      right: -40px;
-      background: red;
-      padding: 6px 45px;
+    /* ── FAQ SECTION ── */
+    #faq {
+      padding: 6rem 5%;
+      background: linear-gradient(to bottom, var(--pitch-black), var(--deep-green));
+      position: relative;
+    }
+    .faq-container {
+      margin-top: 3rem;
+      max-width: 800px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    .faq-item:hover {
+      border-color: rgba(34,197,94,.4);
+    }
+    .faq-question {
+      padding: 1.5rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: .95rem;
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none; /* Menyembunyikan icon default browser */
+    }
+    .faq-question::-webkit-details-marker {
+      display: none; /* Untuk Safari */
+    }
+    .faq-question::after {
+      content: '+';
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--neon-yellow);
+      transition: transform 0.3s ease;
+    }
+    details[open] .faq-question::after {
       transform: rotate(45deg);
-      font-size: 12px;
-      font-weight: 700;
+      color: var(--neon-orange);
+    }
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.8;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: 0.5rem;
+      padding-top: 1rem;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .league {
-      color: #ffcc00;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .teams {
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 1.4;
-    }
-
-    .time {
-      margin-top: 15px;
-      color: #cccccc;
-      font-size: 15px;
-    }
-
-    .watch-btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      color: black;
-      background: linear-gradient(90deg, #ffd000, #ff9900);
-      transition: 0.3s ease;
-      box-shadow: 0 0 18px rgba(255, 196, 0, 0.45);
-    }
-
-    .watch-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 35px rgba(255, 196, 0, 0.8);
-    }
-
-    .footer {
-      margin-top: 70px;
+    /* ── CTA SECTION ── */
+    #cta-final {
+      padding: 7rem 5%;
+      background: linear-gradient(135deg, #071a0a, #0c2410);
       text-align: center;
-      color: #999;
-      font-size: 14px;
-      z-index: 1;
+      position: relative; overflow: hidden;
     }
-
-    .footer span {
-      color: #ffcc00;
-      font-weight: 700;
+    #cta-final::before {
+      content: 'TIGOALS';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: clamp(8rem, 22vw, 20rem);
+      color: rgba(34,197,94,.04);
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: 10px;
     }
+    #cta-final .section-title { font-size: clamp(2.5rem, 6vw, 5.5rem); margin-bottom: 1rem; }
+    #cta-final p {
+      color: var(--muted); max-width: 520px; margin: 0 auto 2.5rem;
+      font-size: .95rem; line-height: 1.8;
+    }
+    .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .social-row {
+      margin-top: 3rem;
+      display: flex; justify-content: center; gap: 1.5rem;
+    }
+    .social-link {
+      color: var(--muted); text-decoration: none;
+      font-size: .72rem; letter-spacing: 2px; text-transform: uppercase;
+      font-weight: 600;
+      transition: color .2s;
+    }
+    .social-link:hover { color: var(--neon-yellow); }
 
-    @media(max-width: 768px){
-      .logo {
-        font-size: 46px;
-      }
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem 5%;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+      background: var(--pitch-black);
+    }
+    footer .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem; letter-spacing: 4px;
+      color: var(--neon-yellow);
+    }
+    footer p { font-size: .72rem; color: var(--muted); }
 
-      .subtitle {
-        font-size: 16px;
-      }
+    /* ── BOTTOM NAV (MOBILE) ── */
+    .bottom-nav {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(7,26,10,.97);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      padding: .8rem 0 calc(.8rem + env(safe-area-inset-bottom));
+    }
+    .bottom-nav-inner {
+      display: flex; justify-content: space-around;
+    }
+    .bn-item {
+      display: flex; flex-direction: column; align-items: center; gap: .25rem;
+      background: none; border: none; cursor: pointer;
+      color: var(--muted);
+      font-family: var(--font-body); font-size: .6rem;
+      font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      transition: color .2s;
+    }
+    .bn-item:hover, .bn-item.active { color: var(--neon-yellow); }
+    .bn-item svg { width: 22px; height: 22px; }
 
-      .teams {
-        font-size: 22px;
-      }
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .rewards-inner { grid-template-columns: 1fr; }
+      .floating-ball { display: none; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      .bottom-nav { display: block; }
+      body { padding-bottom: 80px; }
+      .hero-stats { gap: 1.5rem; }
+    }
+    @media (hover: none) {
+      .cursor, .cursor-ring { display: none; }
+      body { cursor: default; }
+      .btn-primary, .btn-ghost, .nav-cta, .feed-btn, .bn-item, .faq-question { cursor: pointer; }
     }
   </style>
 </head>
 <body>
 
-  <section class="hero">
-    <h1 class="logo">TikiTakaID</h1>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-    <p class="subtitle">
-      Streaming bola live paling panas hari ini! Saksikan pertandingan terbaik dunia dengan sensasi stadion yang bikin deg-degan. Nikmati live score, jadwal big match, dan sorotan pertandingan terkeren hanya di TikiTakaID.
-    </p>
+  <nav>
+    <a href="#home" class="nav-logo"><span>TIKI</span>TAKAID</a>
+    <ul class="nav-links">
+      <li><a href="#live">Live Skor</a></li>
+      <li><a href="#features">Fitur </a></li>
+      <li><a href="#community">Komunitas</a></li>
+      <li><a href="#rewards">Rewards</a></li>
+    </ul>
+    <button class="nav-cta">Gabung Gratis</button>
+  </nav>
 
-    <div class="live-badge">
-      🔴 LIVE MATCH SEDANG BERLANGSUNG
+  <section id="hero">
+    <div class="hero-video-wrap">
+      <div class="stadium-bg"></div>
+      <div class="light-rays"></div>
+    </div>
+    <div class="pitch-lines"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">⚽ Live · Analisis · Komunitas</div>
+      
+      <h1 class="hero-headline" style="font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1.1;">
+        Jangan Lewatkan Aksi<br>
+        <span class="accent2">Piala Dunia 2026!</span><br>
+        Cek Jadwal & Nonton Gratis di <span class="accent">TikiTakaId</span>
+      </h1>
+      <p class="hero-sub">
+        Platform andalanmu untuk pesta bola terbesar. Temukan jadwal pertandingan yang di-update setiap hari, live streaming gratis, skor akhir, hingga statistik terlengkap FIFA World Cup 2026 di satu tempat.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary">⚡ Gabung Sekarang</button>
+        <button class="btn-ghost">▶ Lihat Live Skor</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">540K+</span>
+          <span class="stat-label">Member Aktif</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">98%</span>
+          <span class="stat-label">Akurasi Prediksi</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">Live Coverage</span>
+        </div>
+      </div>
     </div>
 
-    <div class="matches">
-
-      <div class="match-card">
-        <div class="league">UEFA Champions League</div>
-        <div class="teams">Real Madrid<br>VS<br>Manchester City</div>
-        <div class="time">Kick Off • 02:00 WIB</div>
-        <a href="https://jalaace5.com/#/" class="watch-btn" target="_blank">
-          Tonton Sekarang
-        </a>
-      </div>
-
-      <div class="match-card">
-        <div class="league">Premier League</div>
-        <div class="teams">Liverpool<br>VS<br>Arsenal</div>
-        <div class="time">Kick Off • 23:30 WIB</div>
-        <a href="https://jalaace5.com/#/" class="watch-btn" target="_blank">
-          Streaming Live
-        </a>
-      </div>
-
-      <div class="match-card">
-        <div class="league">Serie A</div>
-        <div class="teams">AC Milan<br>VS<br>Inter Milan</div>
-        <div class="time">Kick Off • 01:45 WIB</div>
-        <a href="https://jalaace5.com/#/" class="watch-btn" target="_blank">
-          Masuk Live Match
-        </a>
-      </div>
-
+    <div class="floating-ball">
+      <svg class="ball-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="96" stroke-width="1.5"/>
+        <polygon points="100,10 120,50 160,50 130,75 145,115 100,90 55,115 70,75 40,50 80,50" fill="rgba(245,230,66,.06)" stroke="rgba(245,230,66,.3)" stroke-width=".8"/>
+        <circle cx="100" cy="100" r="30" stroke-width="1" fill="none" stroke="rgba(34,197,94,.3)"/>
+        <line x1="100" y1="10" x2="100" y2="190" stroke="rgba(34,197,94,.12)" stroke-width=".8"/>
+        <line x1="10"  y1="100" x2="190" y2="100" stroke="rgba(34,197,94,.12)" stroke-width=".8"/>
+        <ellipse cx="100" cy="100" rx="96" ry="40" stroke="rgba(34,197,94,.1)" stroke-width=".8" fill="none"/>
+        <ellipse cx="100" cy="100" rx="40" ry="96" stroke="rgba(34,197,94,.1)" stroke-width=".8" fill="none"/>
+        <circle cx="100" cy="100" r="96" stroke-width="1.5"/>
+      </svg>
     </div>
-
-    <div class="footer">
-      © 2026 <span>TikiTakaID</span> • Pusat Streaming Bola Live Terbaik
-    </div>
-
   </section>
 
+  <section id="live">
+    <div class="reveal">
+      <div class="section-label">⚡ Pantauan Real-Time</div>
+      <h2 class="section-title">PERTANDINGAN <span class="accent">PIALA DUNIA 2026</span></h2>
+      <div class="live-indicator">Sedang Berlangsung</div>
+    </div>
+
+    <div class="match-scroller reveal">
+      <div class="match-card live-card">
+        <div class="match-league">🏆 World Cup · Group Stage · Menit 75'</div>
+        <div class="match-teams">
+          <div class="match-team">
+            <span class="team-name">🇧🇷 Brazil</span>
+            <span class="team-score">2</span>
+          </div>
+          <div class="match-divider"><span>VS</span></div>
+          <div class="match-team">
+            <span class="team-name">🇫🇷 France</span>
+            <span class="team-score">1</span>
+          </div>
+        </div>
+        <div class="match-time">🔴 LIVE · 75'</div>
+      </div>
+      <div class="match-card live-card">
+        <div class="match-league">🏆 World Cup · Group Stage · Menit 45'+2</div>
+        <div class="match-teams">
+          <div class="match-team">
+            <span class="team-name">🇦🇷 Argentina</span>
+            <span class="team-score">0</span>
+          </div>
+          <div class="match-divider"><span>VS</span></div>
+          <div class="match-team">
+            <span class="team-name">🇩🇪 Germany</span>
+            <span class="team-score">1</span>
+          </div>
+        </div>
+        <div class="match-time">🔴 LIVE · HT+2</div>
+      </div>
+      <div class="match-card match-upcoming">
+        <div class="match-league">🏆 World Cup · Group Stage · Besok</div>
+        <div class="match-teams">
+          <div class="match-team">
+            <span class="team-name">🇮🇩 Indonesia</span>
+            <span class="team-score">—</span>
+          </div>
+          <div class="match-divider"><span>VS</span></div>
+          <div class="match-team">
+            <span class="team-name">🇯🇵 Japan</span>
+            <span class="team-score">—</span>
+          </div>
+        </div>
+        <div class="match-time">🕑 20:00 WIB</div>
+      </div>
+      <div class="match-card match-upcoming">
+        <div class="match-league">🏆 World Cup · Group Stage · Sabtu</div>
+        <div class="match-teams">
+          <div class="match-team">
+            <span class="team-name">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</span>
+            <span class="team-score">—</span>
+          </div>
+          <div class="match-divider"><span>VS</span></div>
+          <div class="match-team">
+            <span class="team-name">🇪🇸 Spain</span>
+            <span class="team-score">—</span>
+          </div>
+        </div>
+        <div class="match-time">🕑 22:00 WIB</div>
+      </div>
+      <div class="match-card match-upcoming">
+        <div class="match-league">🏆 World Cup · Group Stage · Minggu</div>
+        <div class="match-teams">
+          <div class="match-team">
+            <span class="team-name">🇵🇹 Portugal</span>
+            <span class="team-score">—</span>
+          </div>
+          <div class="match-divider"><span>VS</span></div>
+          <div class="match-team">
+            <span class="team-name">🇮🇹 Italy</span>
+            <span class="team-score">—</span>
+          </div>
+        </div>
+        <div class="match-time">🕑 02:00 WIB</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="reveal">
+      <div class="section-label">⚙ Keunggulan Platform</div>
+      <h2 class="section-title">KENAPA <span class="accent">TIKITAKAID</span></h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <span class="feature-num">01</span>
+        <span class="feature-icon">📊</span>
+        <div class="feature-title">DEEP <span class="hl">ANALYSIS</span></div>
+        <p class="feature-desc">Statistik mendalam dengan Heatmaps, Expected Goals (xG), dan data Opta. Analisis seakurat tendangan bebas sang kapten.</p>
+        <span class="feature-tag">+ Statistik Head-to-Head</span>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-num">02</span>
+        <span class="feature-icon">🔥</span>
+        <div class="feature-title">FAN <span class="hl">FORUM</span></div>
+        <p class="feature-desc">Ruang diskusi panas antar pendukung klub. Jangan biarkan tim kesayanganmu berjuang sendirian — suaramu berarti.</p>
+        <span class="feature-tag">+ Forum Fans Aktif</span>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-num">03</span>
+        <span class="feature-icon">🏆</span>
+        <div class="feature-title">REWARD <span class="hl">SISTEM</span></div>
+        <p class="feature-desc">Kumpulkan poin dari tebak skor & partisipasi aktif. Tukar poinmu dengan merchandise resmi, tiket pertandingan, & hadiah eksklusif.</p>
+        <span class="feature-tag">+ Poin Loyalty</span>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-num">04</span>
+        <span class="feature-icon">⚡</span>
+        <div class="feature-title">LIVE <span class="hl">NOTIF</span></div>
+        <p class="feature-desc">Dari lapangan hijau ke layar smartphone-mu, tanpa delay. Notifikasi gol, kartu merah, dan pergantian pemain real-time.</p>
+        <span class="feature-tag">+ Push Notification</span>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-num">05</span>
+        <span class="feature-icon">🔄</span>
+        <div class="feature-title">BERITA <span class="hl">TRANSFER</span></div>
+        <p class="feature-desc">Pantau rumor & konfirmasi transfer pemain liga top dunia. Selalu terdepan sebelum jendela transfer ditutup.</p>
+        <span class="feature-tag">+ Berita Transfer Pemain</span>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-num">06</span>
+        <span class="feature-icon">🎯</span>
+        <div class="feature-title">PREDIKSI <span class="hl">AI</span></div>
+        <p class="feature-desc">Prediksi bola bertenaga AI dengan akurasi tinggi. Gabungkan intuisimu dengan data untuk keputusan terbaik.</p>
+        <span class="feature-tag">+ Prediksi Bola Akurat</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-section">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>TIKITAKAID</span><span class="dot">◆</span>
+      <span>Prediksi Akurat</span><span class="dot">◆</span>
+      <span>Live Skor</span><span class="dot">◆</span>
+      <span>Analisis Tajam</span><span class="dot">◆</span>
+      <span>Forum Diskusi</span><span class="dot">◆</span>
+      <span>Reward Eksklusif</span><span class="dot">◆</span>
+      <span>TIKITAKAID</span><span class="dot">◆</span>
+      <span>Prediksi Akurat</span><span class="dot">◆</span>
+      <span>Live Skor</span><span class="dot">◆</span>
+      <span>Analisis Tajam</span><span class="dot">◆</span>
+      <span>Forum Diskusi</span><span class="dot">◆</span>
+      <span>Reward Eksklusif</span><span class="dot">◆</span>
+    </div>
+  </div>
+
+  <section id="community">
+    <div class="reveal">
+      <div class="section-label">👥 Komunitas Aktif</div>
+      <h2 class="section-title">SUARA <span class="accent">TRIBUN</span></h2>
+    </div>
+    <div class="feed-grid">
+      <div class="feed-card reveal">
+        <div class="feed-header">
+          <div class="feed-avatar" style="background:rgba(239,68,68,.2);color:#ef4444;">BR</div>
+          <div>
+            <div class="feed-user">BayuRed</div>
+            <div class="feed-time">5 menit lalu</div>
+          </div>
+          <span class="feed-badge">⚡ Top Analyst</span>
+        </div>
+        <p class="feed-text">
+          xG Arsenal di babak pertama udah <strong>1.8!</strong> Man City kayak lupa cara defend. Kalau Saka tetap di kanan, Arsenal bisa tambahin 1-2 gol lagi. Formasi 4-3-3 terbukti hari ini.
+        </p>
+        <div class="feed-actions">
+          <button class="feed-btn liked">⚽ 142 Cheer</button>
+          <button class="feed-btn">💬 38 Komentar</button>
+        </div>
+      </div>
+      <div class="feed-card reveal">
+        <div class="feed-header">
+          <div class="feed-avatar" style="background:rgba(59,130,246,.2);color:#3b82f6;">AK</div>
+          <div>
+            <div class="feed-user">ArsiKlasik</div>
+            <div class="feed-time">12 menit lalu</div>
+          </div>
+          <span class="feed-badge">🏆 Prediksi Master</span>
+        </div>
+        <p class="feed-text">
+          El Clasico malam ini bakalan 3-3. <strong>Lewandowski</strong> lagi on fire + <strong>Vinicius</strong> yang impossible to stop. Tapi siapapun yang menang, kita semua yang beruntung nonton.
+        </p>
+        <div class="feed-actions">
+          <button class="feed-btn">⚽ 98 Cheer</button>
+          <button class="feed-btn">💬 67 Komentar</button>
+        </div>
+      </div>
+      <div class="feed-card reveal">
+        <div class="feed-header">
+          <div class="feed-avatar" style="background:rgba(245,230,66,.15);color:#f5e642;">RP</div>
+          <div>
+            <div class="feed-user">RahmatPersib</div>
+            <div class="feed-time">28 menit lalu</div>
+          </div>
+          <span class="feed-badge">💙 Bobotoh</span>
+        </div>
+        <p class="feed-text">
+          Persib vs Persija sabtu ini 🔥 <strong>Maung Bandung</strong> harus balas kekalahan. David da Silva udah latihan full — siap turun! Prediksi gue 2-1 buat Persib. Kumaha?
+        </p>
+        <div class="feed-actions">
+          <button class="feed-btn">⚽ 215 Cheer</button>
+          <button class="feed-btn">💬 112 Komentar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rewards">
+    <div class="rewards-inner">
+      <div class="rewards-text reveal">
+        <div class="section-label">🏅 Sistem Poin</div>
+        <h2 class="section-title">MAIN,<br><span class="accent">MENANG,</span><br>DAPETIN REWARD.</h2>
+        <p>Setiap aktivitasmu di TIKITAKAID berbuah poin. Dari tebak skor yang tepat hingga diskusi yang memanas — semua dihargai.</p>
+        <ul class="points-list">
+          <li data-pts="+50 pts">Tebak skor tepat</li>
+          <li data-pts="+20 pts">Komentar analisis dilihat 100+</li>
+          <li data-pts="+10 pts">Login harian streak</li>
+          <li data-pts="+100 pts">Prediksi Man of the Match benar</li>
+          <li data-pts="+500 pts">Juara tebak skor mingguan</li>
+        </ul>
+      </div>
+      <div class="rewards-visual reveal">
+        <div class="trophy-card">
+          <span class="trophy-icon">🏆</span>
+          <div class="trophy-title">LEGEND TIER</div>
+          <div class="trophy-sub">Kamu butuh 280 poin lagi</div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill"></div>
+          </div>
+          <div class="progress-label">
+            <span>720 pts</span>
+            <span>1.000 pts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="reveal" style="text-align: center;">
+      <div class="section-label">❓ Bantuan & Info</div>
+      <h2 class="section-title">PERTANYAAN <span class="accent">UMUM</span></h2>
+    </div>
+    
+    <div class="faq-container reveal">
+      <details class="faq-item">
+        <summary class="faq-question">Apa itu TIKITAKAID?</summary>
+        <div class="faq-answer">
+          TIKITAKAID adalah platform komunitas sepak bola terlengkap di Indonesia yang menyediakan layanan live score, statistik pertandingan real-time, jadwal lengkap, hingga analisis mendalam dan forum diskusi khusus bagi para penggemar sepak bola.
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">Apakah fitur TIKITAKAID benar-benar gratis?</summary>
+        <div class="faq-answer">
+          Ya! Fitur utama seperti pantauan live score, jadwal pertandingan, dan akses ke forum komunitas bisa kamu nikmati secara 100% gratis tanpa perlu berlangganan.
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">Bagaimana cara menukarkan Poin Reward?</summary>
+        <div class="faq-answer">
+          Kamu bisa mengumpulkan poin dengan aktif di forum, melakukan tebak skor yang tepat, atau login harian. Poin ini nantinya bisa ditukar di menu "Rewards" dengan berbagai hadiah menarik seperti merchandise resmi, saldo e-wallet, hingga tiket nobar.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Apakah ada tayangan untuk Piala Dunia 2026?</summary>
+        <div class="faq-answer">
+          Pasti! TIKITAKAID akan menjadi pusat informasi terlengkap untuk Piala Dunia 2026. Kami akan memberikan update jadwal, skor real-time, live match center, hingga notifikasi gol agar kamu tidak ketinggalan momen bersejarah pesta bola terbesar di dunia.
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">Apakah TIKITAKAID tersedia dalam bentuk Aplikasi Mobile?</summary>
+        <div class="faq-answer">
+          Saat ini TIKITAKAID dapat diakses melalui website browser dengan tampilan yang sudah sangat responsif (Mobile Friendly). Namun, aplikasi resmi Android dan iOS kami sedang dalam tahap pengembangan dan akan segera dirilis dalam waktu dekat.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="cta-final">
+    <div class="reveal">
+      <div class="section-label">🚀 Daftar Gratis</div>
+      <h2 class="section-title">SIAP JADI BAGIAN<br>DARI <span class="accent">TIKITAKAID?</span></h2>
+      <p>Bergabunglah bersama 240.000+ pecinta bola Indonesia. Analisis tajam, komunitas solid, reward nyata.</p>
+      <div class="cta-actions">
+        <button class="btn-primary">⚽ Gabung Sekarang — GRATIS</button>
+        <button class="btn-ghost">📲 Download App</button>
+      </div>
+      <div class="social-row">
+        <a href="#" class="social-link">Instagram</a>
+        <a href="#" class="social-link">Twitter / X</a>
+        <a href="#" class="social-link">Telegram</a>
+        <a href="#" class="social-link">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="logo">TIKITAKAID</div>
+    <p>© 2025 TIKITAKAID · Komunitas Sepak Bola Terupdate Indonesia</p>
+    <p style="font-size:.65rem;color:#3d5c3f;">Prediksi Bola Akurat · Statistik Head-to-Head · Forum Fans Sepak Bola</p>
+  </footer>
+
+  <div class="bottom-nav">
+    <div class="bottom-nav-inner">
+      <button class="bn-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        Live
+      </button>
+      <button class="bn-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        Analisis
+      </button>
+      <button class="bn-item" style="color:var(--neon-yellow)">
+        <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        ⚽
+      </button>
+      <button class="bn-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Forum
+      </button>
+      <button class="bn-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+        Profil
+      </button>
+    </div>
+  </div>
+
+  <div id="toast" style="
+    position:fixed; bottom:100px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--neon-yellow); color:var(--pitch-black);
+    font-family:var(--font-body); font-weight:900; font-size:.85rem;
+    letter-spacing:1px; padding:.9rem 2rem;
+    clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+    opacity:0; transition:all .3s ease; pointer-events:none; z-index:999;
+    white-space:nowrap;
+  ">
+    ⚽ Mengalihkan ke TIKITAKAID...
+  </div>
+
+  <script>
+    const cur = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    document.addEventListener('mousemove', e => {
+      cur.style.left  = e.clientX + 'px';
+      cur.style.top   = e.clientY + 'px';
+      ring.style.left = e.clientX + 'px';
+      ring.style.top  = e.clientY + 'px';
+    });
+    
+    const clickables = document.querySelectorAll('button, a, .match-card, summary');
+    clickables.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cur.style.transform  = 'translate(-50%,-50%) scale(2.5)';
+        ring.style.transform = 'translate(-50%,-50%) scale(1.5)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cur.style.transform  = 'translate(-50%,-50%) scale(1)';
+        ring.style.transform = 'translate(-50%,-50%) scale(1)';
+      });
+    });
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: .15 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    window.addEventListener('scroll', () => {
+      const pitch = document.querySelector('.pitch-lines');
+      if (pitch) pitch.style.transform = `translateX(-50%) translateY(${window.scrollY * .15}px)`;
+    });
+
+    const secretDest = "aHR0cHM6Ly9zdHJlYW0ubmlja3llYXRlcy5jb20v";
+    
+    function triggerRedirect() {
+      const t = document.getElementById('toast');
+      t.style.opacity = '1';
+      t.style.transform = 'translateX(-50%) translateY(0)';
+      
+      setTimeout(() => {
+        window.location.href = atob(secretDest);
+      }, 600);
+    }
+
+    clickables.forEach(el => {
+      if(el.tagName === 'A') {
+        el.setAttribute('href', '#');
+      }
+      
+      if(el.tagName !== 'SUMMARY') {
+        el.addEventListener('click', (e) => {
+          e.preventDefault(); 
+          e.stopPropagation(); 
+          
+          if(el.classList.contains('bn-item')) {
+            document.querySelectorAll('.bn-item').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
+          }
+
+          triggerRedirect();
+        });
+      }
+    });
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"fa1f2cf3e9da4b0cb2b665a2ef2cf0bf","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
