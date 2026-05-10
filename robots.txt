@@ -1,0 +1,8 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: *
+Allow: /
+
+Host: https://tikitaka-id.pages.dev
+Sitemap: https://tikitaka-id.pages.dev/sitemap.xml
